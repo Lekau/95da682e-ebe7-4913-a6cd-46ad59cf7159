@@ -25,11 +25,15 @@ class QuestionCardView: UIView {
               let selectionView = optionsStackView.arrangedSubviews[index] as? SelectableAwnswerView else { return }
         selectionView.applySelectionStyling()
     }
+    
+//    styling of the Title, fix this bug (low hanging fruit)
 
     private func applyStyling() {
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.semibold)
-
+        titleLabel.numberOfLines = 0
+        titleLabel.preferredMaxLayoutWidth = layer.frame.width * 0.8
+        
         layer.cornerRadius = 10
         layer.cornerCurve = .continuous
     }

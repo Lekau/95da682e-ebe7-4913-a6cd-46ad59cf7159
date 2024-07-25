@@ -4,7 +4,7 @@ protocol SelectionViewDelegate {
     func didSelect(selectionview: SelectableAwnswerView)
 }
 
-class SelectableAwnswerView: UIView {
+class SelectableAwnswerView: UIView { // TODO we gonna rename this one
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak var highlightView: UIView!
 
@@ -37,7 +37,7 @@ class SelectableAwnswerView: UIView {
     private func applyStyling() {
         applyDeselectionStyling()
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.regular)
-
+        
         highlightView.layer.cornerCurve = .continuous
         highlightView.layer.cornerRadius = 10
     }
@@ -62,5 +62,6 @@ class SelectableAwnswerView: UIView {
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
         applySelectionStyling()
         delegate?.didSelect(selectionview: self)
+        // 
     }
 }
