@@ -18,15 +18,15 @@ class QuestionCardView: UIView {
                       addSeperator: index > options.count - 1,
                       setSelected: index == selectedIndex)
         }
+        ensureCorrectSelectionIsSelected()
     }
 
     func ensureCorrectSelectionIsSelected() {
         guard let index = selectedIndex,
               let selectionView = optionsStackView.arrangedSubviews[index] as? SelectableAwnswerView else { return }
         selectionView.applySelectionStyling()
+        currentSelection = selectionView
     }
-    
-//    styling of the Title, fix this bug (low hanging fruit)
 
     private func applyStyling() {
         titleLabel.textColor = .white
