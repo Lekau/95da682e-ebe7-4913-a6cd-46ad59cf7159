@@ -25,7 +25,7 @@ class OrderByTableViewController: UITableViewController {
             cell?.textLabel?.text = "Bugs"
         }
         return cell ?? UITableViewCell()
-    }
+    } // investigate the selection here for the order of Engineer data (must be ordered using quickStats var)
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
