@@ -41,6 +41,8 @@
 		5DD01B5627046CD00032C29A /* SelectableAwnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD01B5527046CD00032C29A /* SelectableAwnswerView.xib */; };
 		5DD01B5827046CDF0032C29A /* QuestionCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD01B5727046CDF0032C29A /* QuestionCardView.xib */; };
 		5DD01B5E27049AFA0032C29A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD01B5D27049AFA0032C29A /* UIView+Extension.swift */; };
+		E2CC86D22C5585E800352BE6 /* OrderByDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC86D12C5585E800352BE6 /* OrderByDelegate.swift */; };
+		E2CC86D42C558DF000352BE6 /* SharedOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC86D32C558DF000352BE6 /* SharedOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		5DD01B5527046CD00032C29A /* SelectableAwnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableAwnswerView.xib; sourceTree = "<group>"; };
 		5DD01B5727046CDF0032C29A /* QuestionCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCardView.xib; sourceTree = "<group>"; };
 		5DD01B5D27049AFA0032C29A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E2CC86D12C5585E800352BE6 /* OrderByDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderByDelegate.swift; sourceTree = "<group>"; };
+		E2CC86D32C558DF000352BE6 /* SharedOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 			children = (
 				5D8DA23A26E0182B00418960 /* Question.swift */,
 				5D93CE222705F5B000D5059C /* Engineer.swift */,
+				E2CC86D32C558DF000352BE6 /* SharedOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 		5D93CE39270B097800D5059C /* Main Files (Free to change) */ = {
 			isa = PBXGroup;
 			children = (
+				E2CC86D02C5585BF00352BE6 /* Protocols */,
 				5D93CE3A270B09CD00D5059C /* Resources */,
 				5D8DA23726E0142400418960 /* Models */,
 				5D8DA23926E016A400418960 /* Controllers */,
@@ -340,6 +346,14 @@
 				5DD01B5527046CD00032C29A /* SelectableAwnswerView.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		E2CC86D02C5585BF00352BE6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E2CC86D12C5585E800352BE6 /* OrderByDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD01B5E27049AFA0032C29A /* UIView+Extension.swift in Sources */,
+				E2CC86D42C558DF000352BE6 /* SharedOptions.swift in Sources */,
 				5D8DA22B26E0104C00418960 /* RootViewController.swift in Sources */,
 				5D93CE2E2707306600D5059C /* OrderByTableViewController.swift in Sources */,
 				5D90F2E426DB774400EFA4A8 /* About_You.xcdatamodeld in Sources */,
@@ -494,6 +509,7 @@
 				5D8DA22F26E010C600418960 /* UIViewController+Extensions.swift in Sources */,
 				5D736ECE2732FEF200BE2B04 /* UserDefaults+Extension .swift in Sources */,
 				5DD01B5227046C5B0032C29A /* QuestionCardView.swift in Sources */,
+				E2CC86D22C5585E800352BE6 /* OrderByDelegate.swift in Sources */,
 				5D93CE2B2706F0DB00D5059C /* GlucodianTableViewCell.swift in Sources */,
 				5D90F2DC26DB774400EFA4A8 /* SceneDelegate.swift in Sources */,
 				5D8DA23B26E0182B00418960 /* Question.swift in Sources */,

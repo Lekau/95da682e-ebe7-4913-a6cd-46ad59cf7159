@@ -1,6 +1,9 @@
 import UIKit
 
-class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
+class EngineersTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, OrderByTableViewControllerDelegate {
+    func orderByTableViewController(_ controller: OrderByTableViewController, didSelectOption option: String) {
+        
+    }
     var engineers: [Engineer] = Engineer.testingData()
 
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
     @objc func orderByTapped() {
         guard let from = navigationItem.rightBarButtonItem else { return }
         let controller = OrderByTableViewController(style: .plain)
+        controller.delegate = self
         let size = CGSize(width: 200,
                           height: 150)
 
@@ -36,6 +40,18 @@ class EngineersTableViewController: UITableViewController, UIPopoverPresentation
              from: from,
              size: size,
              arrowDirection: .up)
+    }
+    
+    func orderByTableViewController(_ controller: OrderByTableViewController, didSelectOption option: SortingOption) {
+        switch option {
+        case .years:
+            engineers.sort { $0.quickStats.years < $1.quickStats.years }
+        case .coffees:
+            engineers.sort { $0.quickStats.coffees < $1.quickStats.coffees }
+        case .bugs:
+            engineers.sort { $0.quickStats.bugs < $1.quickStats.bugs }
+        }
+        tableView.reloadData()
     }
 
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {

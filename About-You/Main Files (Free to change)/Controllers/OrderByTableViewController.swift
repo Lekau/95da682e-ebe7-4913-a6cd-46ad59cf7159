@@ -1,7 +1,8 @@
 import UIKit
 
 class OrderByTableViewController: UITableViewController {
-
+    weak var delegate: OrderByTableViewControllerDelegate?
+    let sortingOptions: [SortingOption] = SortingOption.allCases
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
@@ -12,23 +13,20 @@ class OrderByTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return sortingOptions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
-        if indexPath.row == 0 {
-            cell?.textLabel?.text = "Years"
-        } else if indexPath.row == 1 {
-            cell?.textLabel?.text = "Coffees"
-        } else {
-            cell?.textLabel?.text = "Bugs"
-        }
+        cell?.textLabel?.text = sortingOptions[indexPath.row].rawValue
         return cell ?? UITableViewCell()
-    } // investigate the selection here for the order of Engineer data (must be ordered using quickStats var)
+    } 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let selectedOption = sortingOptions[indexPath.row]
+        delegate?.orderByTableViewController(self, didSelectOption: selectedOption)
+        dismiss(animated: true)
     }
 
 }
