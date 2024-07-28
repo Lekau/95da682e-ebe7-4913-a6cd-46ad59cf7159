@@ -15,7 +15,7 @@ class QuestionCardView: UIView {
         self.selectedIndex = selectedIndex
         for (index, optionText) in options.enumerated() {
             addOption(with: optionText,
-                      addSeperator: index > options.count - 1,
+                      addSeperator:   index > options.count - 1, //index < options.count - 1 && index != selectedIndex, introduces new bug i ran out of time to look at, BUG: the setSelected runs for every index half of selected index that is a whole number
                       setSelected: index == selectedIndex)
         }
         ensureCorrectSelectionIsSelected()
@@ -38,10 +38,10 @@ class QuestionCardView: UIView {
         layer.cornerCurve = .continuous
     }
 
-    private func addOption(with text: String, addSeperator: Bool = true, setSelected: Bool) {
+    private func addOption(with text: String, addSeperator: Bool, setSelected: Bool) {
         guard let optionView = SelectableAwnswerView.loadView() else { return }
         optionView.setUp(with: text, delegate: self)
-
+        
         optionsStackView.addArrangedSubview(optionView)
         if addSeperator {
             createAndAddSeperator()

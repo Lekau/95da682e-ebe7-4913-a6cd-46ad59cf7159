@@ -17,6 +17,8 @@ class QuestionsViewController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = .white
         title = "About"
         scrollView.delegate = self
+//        let profileView = ProfileView(frame: CGRect(x: 10, y: 10, width: 355, height: 160))
+//        containerStack.addSubview(profileView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,11 +29,9 @@ class QuestionsViewController: UIViewController, UIScrollViewDelegate {
 
     func setUp(with questions: [Question]) {
         loadViewIfNeeded()
-
         for question in questions {
             addQuestion(with: question)
         }
-
         self.questions = questions
     }
 
@@ -42,4 +42,6 @@ class QuestionsViewController: UIViewController, UIScrollViewDelegate {
                        selectedIndex: data.answer?.index)
         containerStack.addArrangedSubview(cardView)
     }
+    
+    
 }
